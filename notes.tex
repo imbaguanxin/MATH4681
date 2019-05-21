@@ -28,7 +28,6 @@
 
 \begin{document}  
 	\begin{multicols}{2}
-		05/06
 		\begin{enumerate}
 			\item Moment Generating Function
 			$M_X(t) = E(e^{tx})$\\
@@ -129,12 +128,21 @@
 					$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$\\
 					$M_X(t) = (\frac{1-p}{1-pe^t})^r$\\
 					$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
-					
-				
-				
-				
 			\end{enumerate}
-			
+			\item Chebychev's Theorem\\
+			$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$
+			\item Continuous Random Variable
+			\begin{enumerate}
+				\item Basic Properties\\
+				1. $pdf: f_X(x) \ge 0$\\
+				2. $cdf: F_X(x) = \int_{-\infty}^{\infty} f_X(x)dx$\\
+				3. $\int_{-\infty}^{\infty}f_X(x)dx = 1$
+				\item Mean, Medium and Variance\\
+				mean: $\mu = E(x) = \int_{-\infty}^{\infty}xf_X(x)dx$\\
+				medium m: solve function $\int_{-\infty}^{m} f_X(x)dx = \frac{1}{2}$\\
+				Variance: \\
+				$VAR(X) = E(X^2) - E^2(X) = \int_{-\infty}^{\infty}[x-E(X)]f_X(x)dx$
+			\end{enumerate}
 		\end{enumerate}
 	\newpage
 	\end{multicols}
