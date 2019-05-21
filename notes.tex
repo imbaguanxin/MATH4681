@@ -1,0 +1,141 @@
+\documentclass[10pt]{article}  
+\usepackage{graphicx}
+\usepackage{geometry}   %设置页边距的宏包
+
+\usepackage{algpseudocode}
+\usepackage{comment}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage{kpfonts}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{array}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\Ib}{\mathbf{I}}
+\newcommand{\Pb}{\mathbf{P}}
+\newcommand{\Qb}{\mathbf{Q}}
+\newcommand{\Rb}{\mathbf{R}}
+\newcommand{\Nb}{\mathbf{N}}
+\newcommand{\Fb}{\mathbf{F}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\Lap}{\mathcal{L}}
+\newcommand{\Zplus}{\mathbf{Z}^+}
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1.5cm}  %设置 上、左、下、右 页边距
+
+\begin{document}  
+	\begin{multicols}{2}
+		05/06
+		\begin{enumerate}
+			\item Moment Generating Function
+			$M_X(t) = E(e^{tx})$\\
+			continuous: $M_X(t) = \int_{-\infty}^{\infty}e^{tx}P_x(x)dx$\\
+			discrete: $M_X(t) = \sum e^{tx}P_x(x)$\\
+			$\frac{dM_x(t)}{dt} = E(\frac{de^{tx}}{dt}) = E(xe^{tx})$
+			$\Rightarrow M^{(n)}_x(t) = E(x^ne^{tx})$\\
+			Properties:
+			\begin{enumerate}
+				\item $M_x(t) = (1-p+pe^t)^n$ for binomial(n,p)
+				\item $M_x(t) = E(\sum_{n=0}^{\infty}\frac{x^nt^n}{n!})$ according to Taylor Series\\
+				$M'_x(t) = E(0+x+x^2t + \frac{x^3t^2}{2!} + \dots) = E(\sum_{n=0}^{\infty}\frac{x^{n+1}t^n}{n!})$
+				$\Rightarrow M^{(k)}_x(t) = E(\sum_{n=0}^{\infty}\frac{x^{n+k}t^n}{n!})$
+				\item $M_x^{(n)}(0) = E(X^n) \\ \Rightarrow VAR[x]=E[x^2] - E^2[x] = M_x''(0) - [M_x'(0)]^2 $
+				\item $M_x(t) = M_y(t) \Rightarrow X Y$ has same distribution
+				\item $M_x(0) = 1$
+				\item $M_{ax + b}(t) = M_x(at)e^{bt}$   Proof:\\ $M_{ax+b}(t) = E(e^{t(ax+b)}) = E(e^{axt}e^{bt}) = E(e^{axt})e^{bt} = M_x(at)e^{bt}$
+				\item $M_{X+Y}(bt) = M_X(t)M_Y(t)$ ($X,Y$ independent)
+			\end{enumerate}
+		
+			\item Gama Function
+			$\Gamma(n) = \int_{0}^{\infty}u^{n-1}e^{-u}du = (n-1)!$\\
+			Proof:\\
+			1. $\int_{0}^{\infty}e^{-x}dx = -e^{-x}|_0^{\infty} = 1$\\
+			2. $\Gamma(n) = -\int_{0}^{\infty}x^{n-1}de^{-x}\\
+			= - (x^{n-1}e^{-x}|_0^{\infty} - \int_{0}^{\infty}e^{-x}(n-1)x^{n-1}dx)\\
+			= 0 + \int_{0}^{\infty}e^{-x}(n-1)x^{n-2}dx\\
+			= (n-1)\int_{0}^{\infty}e^{-x}x^{n-2}dx\\
+			= (n-1)\Gamma(n-1)$\\
+			Use Induction to prove the formula
+			
+			\item Basic probability property
+			\begin{enumerate}
+				\item Basic Properties\\
+				1. $P(E) = \frac{n(E)}{n(S)}, \in[0,1]$\\
+				2. $P(\phi) = 0$\\
+				3. $A\subseteq B, P(A) \le P(B)$\\
+				4. $P(A\cup B) = P(A) + P(B) - P(A\cap B)$
+				\item Conditional Probability and Bayles Theorem\\
+				1. $P(A|B) = \frac{P(A\cup B)}{P(B)}$\\
+				2. $P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|A')P(A')} $
+				\item PDF and CDF\\
+				PDF: probability distribution function $\Rightarrow P_X(x)$ \\
+				CDF: cummulative distribution function $\Rightarrow F_X(x) = \phi_X(x) = N_X(x) = P(X < x)$
+				\item Expectation\\
+				1. $E(X) = \sum xP_X(x)$ or $\int_{-\infty}^{\infty}xP_X(x)$\\
+				2. $E(c) = c$\\
+				3. $E(aX) = aE(X)$\\
+				4. $E(X+Y) = E(X) + E(Y)$\\
+				5. $E(X) = M_X'(0)$
+				\item Variance and Standard Deviation\\
+				1. $VAR(X) = E(X^2)-E^2(X)$ = $\sum[(x-E(X)]P_X(x) = E[(x-\mu)^2] = \sigma^2$\\
+				2. $VAR(c) = 0$\\
+				3. $VAR(aX) = a^2VAR(x)$\\
+				4. $VAR(X\pm Y) = VAR(X) + VAR(Y) \pm 2COV(x,y)$, $COV(x,y) = E(XY)-E(X)E(Y)$
+				\item z-score\\
+				$Z = \frac{x-\mu}{\sigma}$, measures the distance of x from expected value in standard units.
+			\end{enumerate}
+		
+			\item Discrete Distributions
+			\begin{enumerate}
+				\item Binomial Distribution\\
+				DEF: n time Bernoulli trials combined. probability of success and fail is (p, 1-p). Probability of success remains the same through the trails. X is the r.v of success times.\\
+				Note as $B(n,p)$\\
+				$P_X(x) = {n \choose x} p^x (1-p)^{n-x}$\\
+				$M_X(t) = (1-p-pe^t)^n$\\
+				$E(X) = np, VAR(X) = np(1-p)$
+				\item Hyper Geometric Distribution\\
+				DEF: A sample of size n taken from a finite population of size N. The population has a subgroup of size $r \ge n$ that is of interest. x is the number of members of the subgroup taken.\\
+				Note as $H(N,n,r)$\\
+				$P_X(x) = \frac{{r \choose x}{N-r \choose n-x}}{{N \choose n}}$\\
+				$E(X) = n\frac{r}{N}$\\
+				$VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$\\
+				When $x \rightarrow \infty$, H(N,n,r) $\rightarrow$ B(n,$\frac{r}{N}$). H samples without replacement while B samples with replacement.
+				\item Poisson Process\\
+				DEF: model the number of random occurance of some phenomenon in specific unit of space or time.\\
+				$P_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}$\\
+				$\lambda$: average arrival in given time or space\\
+				$E(X) = \lambda, VAR(X) = \lambda$\\
+				Poisson simulates Binomial when n is large. usually when $\lambda = np < 10$, we use poisson as an approximation of Binomial.
+				\item Geometric Distribution
+				DEF: number of trials to get the first success in a sequence of Bernoulli trials where p is the success probability.
+				\begin{enumerate}
+					\item X is the r.v of number of total trials (x includes the first success)\\
+					$P_X(x) = (1-p)^{x-1}p, x = 1,2,3 \dots$\\
+					$E(X) = 1/p, VAR(X) = \frac{1-p}{p^2}$
+					\item X is the r.v of number of failed trials (x excludes the first success)\\
+					$P_X(x) = (1-p)^xp, x = 0,1,2,\dots$\\
+					$M_X(t) = \frac{p}{1-e^t(1-p)}$\\
+					$E(X) = \frac{1-p}{p}, VAR(X) = \frac{1-p}{p^2}$
+				\end{enumerate}
+				\item Negative Binomial Distribution\\
+					DEF: X is the r.v of number of trials need to observe the $r^{th}$ success in a sequence of Bernoulli trails where p is the success probability.\\
+					$P_X(x) = {x-1 \choose r-1}p^r(1-p)^{x-r}, x = r,r+1,r+2 \dots$\\
+					$M_X(t) = (\frac{p}{1-e^t(1-p)})^r$\\
+					$E(X) = \frac{r}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+					Alternatively, X is the r.v of failures before the $r^{th}$ success:\\
+					$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$\\
+					$M_X(t) = (\frac{1-p}{1-pe^t})^r$\\
+					$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+					
+				
+				
+				
+			\end{enumerate}
+			
+		\end{enumerate}
+	\newpage
+	\end{multicols}
+\end{document}
