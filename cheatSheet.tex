@@ -103,18 +103,26 @@
 			\end{enumerate}
 			\item Chebychev's Theorem\\
 			$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$
-			\item Continuous Random Variable
+		
+			\item Continuous Distributions
 			\begin{enumerate}
-				\item Basic Properties\\
-				1. $pdf: f_X(x) \ge 0$\\
-				2. $cdf: F_X(x) = \int_{-\infty}^{\infty} f_X(x)dx$\\
-				3. $\int_{-\infty}^{\infty}f_X(x)dx = 1$\\
-				4. $f_X(x) = \frac{d}{dx}F_X(x)$
-				\item Mean, Medium and Variance\\
-				mean: $\mu = E(x) = \int_{-\infty}^{\infty}xf_X(x)dx$\\
-				medium m: solve function $\int_{-\infty}^{m} f_X(x)dx = \frac{1}{2}$\\
-				Variance: \\
-				$VAR(X) = E(X^2) - E^2(X) = \int_{-\infty}^{\infty}[x-E(X)]f_X(x)dx$
+				\item Uniform(rectangle) Distribution\\
+				$f_X(x) = \frac{1}{b-a}, a \le x \le b$\\
+				$F_X(x) = \frac{x-a}{b-a}, a\le x \le b$\\
+				$E(X) = \frac{a+b}{2}, VAR(X) = \frac{(b-a)^2}{12}$
+				\item Exponential Distribution\\
+				$f_X(x) = \frac{1}{\theta}e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$F_X(x) = 1- e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$M_X(t) = \frac{1}{1-\theta t}$\\
+				$E(X) = \theta, VAR(X) = \theta^2$\\
+				Note as $X \sim exp(\theta)$
+				\item Gamma Distribution\\
+				$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$M_X(t) = \frac{1}{(1-\theta t)^n}$\\
+				$E(X) = n\theta, VAR(X) = n\theta^2$\\
+				Note as $X \sim \Gamma(n,\theta)$\\
+				Exponential dist. is a special case of Gamma dist where n = 1. Gamma Distribution can be viewed as a sum of Exponential dists.\\
+				$X \sim \Gamma(n,\theta) \Leftrightarrow X = \sum_{i = 1}^{n} X_i, X_i \sim exp(\theta)$
 			\end{enumerate}
 		\end{enumerate}
 		\newpage
