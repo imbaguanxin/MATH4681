@@ -29,7 +29,7 @@
 \begin{document}  
 	\begin{multicols}{2}
 		\begin{enumerate}
-			\item Moment Generating Function
+			\item Moment Generating Function\\
 			$M_X(t) = E(e^{tx})$\\
 			continuous: $M_X(t) = \int_{-\infty}^{\infty}e^{tx}P_x(x)dx$\\
 			discrete: $M_X(t) = \sum e^{tx}P_x(x)$\\
@@ -91,13 +91,13 @@
 			\begin{enumerate}
 				\item Binomial Distribution\\
 				DEF: n time Bernoulli trials combined. probability of success and fail is (p, 1-p). Probability of success remains the same through the trails. X is the r.v of success times.\\
-				Note as $B(n,p)$\\
+				Note as $X \sim B(n,p)$\\
 				$P_X(x) = {n \choose x} p^x (1-p)^{n-x}$\\
 				$M_X(t) = (1-p-pe^t)^n$\\
 				$E(X) = np, VAR(X) = np(1-p)$
 				\item Hyper Geometric Distribution\\
 				DEF: A sample of size n taken from a finite population of size N. The population has a subgroup of size $r \ge n$ that is of interest. x is the number of members of the subgroup taken.\\
-				Note as $H(N,n,r)$\\
+				Note as $X \sim H(N,n,r)$\\
 				$P_X(x) = \frac{{r \choose x}{N-r \choose n-x}}{{N \choose n}}$\\
 				$E(X) = n\frac{r}{N}$\\
 				$VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$\\
@@ -108,7 +108,7 @@
 				$\lambda$: average arrival in given time or space\\
 				$E(X) = \lambda, VAR(X) = \lambda$\\
 				Poisson simulates Binomial when n is large. usually when $\lambda = np < 10$, we use poisson as an approximation of Binomial.
-				\item Geometric Distribution
+				\item Geometric Distribution\\
 				DEF: number of trials to get the first success in a sequence of Bernoulli trials where p is the success probability.
 				\begin{enumerate}
 					\item X is the r.v of number of total trials (x includes the first success)\\
@@ -143,6 +143,26 @@
 				medium m: solve function $\int_{-\infty}^{m} f_X(x)dx = \frac{1}{2}$\\
 				Variance: \\
 				$VAR(X) = E(X^2) - E^2(X) = \int_{-\infty}^{\infty}[x-E(X)]f_X(x)dx$
+			\end{enumerate}
+			\item Continuous Distributions
+			\begin{enumerate}
+				\item Uniform(rectangle) Distribution\\
+				$f_X(x) = \frac{1}{b-a}, a \le x \le b$\\
+				$F_X(x) = \frac{x-a}{b-a}, a\le x \le b$\\
+				$E(X) = \frac{a+b}{2}, VAR(X) = \frac{(b-a)^2}{12}$
+				\item Exponential Distribution\\
+				$f_X(x) = \frac{1}{\theta}e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$F_X(x) = 1- e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$M_X(t) = \frac{1}{1-\theta t}$\\
+				$E(X) = \theta, VAR(X) = \theta^2$\\
+				Note as $X \sim exp(\theta)$
+				\item Gamma Distribution\\
+				$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$M_X(t) = \frac{1}{(1-\theta t)^n}$\\
+				$E(X) = n\theta, VAR(X) = n\theta^2$\\
+				Note as $X \sim \Gamma(n,\theta)$\\
+				Exponential dist. is a special case of Gamma dist where n = 1. Gamma Distribution can be viewed as a sum of Exponential dists.\\
+				$X \sim \Gamma(n,\theta) \Leftrightarrow X = \sum_{i = 1}^{n} X_i, X_i \sim exp(\theta)$
 			\end{enumerate}
 		\end{enumerate}
 	\newpage

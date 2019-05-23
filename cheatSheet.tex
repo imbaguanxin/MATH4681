@@ -1,0 +1,122 @@
+\documentclass[10pt]{article}  
+\usepackage{graphicx}
+\usepackage{geometry}   %设置页边距的宏包
+
+\usepackage{algpseudocode}
+\usepackage{comment}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage{kpfonts}
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{array}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\Ib}{\mathbf{I}}
+\newcommand{\Pb}{\mathbf{P}}
+\newcommand{\Qb}{\mathbf{Q}}
+\newcommand{\Rb}{\mathbf{R}}
+\newcommand{\Nb}{\mathbf{N}}
+\newcommand{\Fb}{\mathbf{F}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\Lap}{\mathcal{L}}
+\newcommand{\Zplus}{\mathbf{Z}^+}
+\geometry{left=1cm,right=1cm,top=1cm,bottom=1.5cm}  %设置 上、左、下、右 页边距
+
+\begin{document}  
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item Moment Generating Function\\
+			$M_X(t) = E(e^{tx})$\\
+			Properties:
+			\begin{enumerate}
+				\item $M_x(t) = (1-p+pe^t)^n$ for binomial(n,p)
+				\item $M_x^{(n)}(0) = E(X^n) \\ \Rightarrow VAR[x]=E[x^2] - E^2[x] = M_x''(0) - [M_x'(0)]^2 $
+				\item $M_x(t) = M_y(t) \Rightarrow X Y$ has same distribution
+				\item $M_x(0) = 1$
+				\item $M_{ax + b}(t) = M_x(at)e^{bt}$
+				\item $M_{X+Y}(bt) = M_X(t)M_Y(t)$ ($X,Y$ independent)
+			\end{enumerate}
+			
+			\item Gama Function
+			$\Gamma(n) = \int_{0}^{\infty}u^{n-1}e^{-u}du = (n-1)!$
+			
+			\item Basic probability property
+			\begin{enumerate}
+				\item Conditional Probability and Bayles Theorem\\
+				1. $P(A|B) = \frac{P(A\cup B)}{P(B)}$\\
+				2. $P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|A')P(A')} $
+				\item Expectation\\
+				1. $E(X) = \sum xP_X(x)$ or $\int_{-\infty}^{\infty}xf_X(x)$\\
+				2. $E(c) = c$\\
+				3. $E(aX) = aE(X)$\\
+				4. $E(X+Y) = E(X) + E(Y)$\\
+				5. $E(X) = M_X'(0)$
+				\item Variance and Standard Deviation\\
+				1. $VAR(X) = E(X^2)-E^2(X)$ = $\sum[(x-E(X)]P_X(x) = E[(x-\mu)^2] = \sigma^2$\\
+				2. $VAR(c) = 0$\\
+				3. $VAR(aX) = a^2VAR(x)$\\
+				4. $VAR(X\pm Y) = VAR(X) + VAR(Y) \pm 2COV(x,y)$, $COV(x,y) = E(XY)-E(X)E(Y)$
+				\item z-score\\
+				$Z = \frac{x-\mu}{\sigma}$, measures the distance of x from expected value in standard units.
+			\end{enumerate}
+			
+			\item Discrete Distributions
+			\begin{enumerate}
+				\item Binomial Distribution\\
+				Note as $X \sim B(n,p)$\\
+				$P_X(x) = {n \choose x} p^x (1-p)^{n-x}$\\
+				$M_X(t) = (1-p-pe^t)^n$\\
+				$E(X) = np, VAR(X) = np(1-p)$
+				\item Hyper Geometric Distribution\\
+				Note as $X \sim H(N,n,r)$, N:total size, n:total pick, r:size of special subgroup\\
+				$P_X(x) = \frac{{r \choose x}{N-r \choose n-x}}{{N \choose n}}$\\
+				$E(X) = n\frac{r}{N}$\\
+				$VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$
+				\item Poisson Process\\
+				$P_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}$\\
+				$\lambda$: average arrival in given time or space\\
+				$E(X) = \lambda, VAR(X) = \lambda$\\
+				When $\lambda = np < 10$, poisson approximates Binomial.
+				\item Geometric Distribution\\
+				\begin{enumerate}
+					\item X is the r.v of number of total trials (x includes the first success)\\
+					$P_X(x) = (1-p)^{x-1}p, x = 1,2,3 \dots$\\
+					$E(X) = 1/p, VAR(X) = \frac{1-p}{p^2}$
+					\item X is the r.v of number of failed trials (x excludes the first success)\\
+					$P_X(x) = (1-p)^xp, x = 0,1,2,\dots$\\
+					$M_X(t) = \frac{p}{1-e^t(1-p)}$\\
+					$E(X) = \frac{1-p}{p}, VAR(X) = \frac{1-p}{p^2}$
+				\end{enumerate}
+				\item Negative Binomial Distribution\\
+				X is the r.v of number of trials need to observe the $r^{th}$ success in a sequence of Bernoulli trails where p is the success probability.\\
+				$P_X(x) = {x-1 \choose r-1}p^r(1-p)^{x-r}, x = r,r+1,r+2 \dots$\\
+				$M_X(t) = (\frac{p}{1-e^t(1-p)})^r$\\
+				$E(X) = \frac{r}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+				Alternatively, X is the r.v of failures before the $r^{th}$ success:\\
+				$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$\\
+				$M_X(t) = (\frac{1-p}{1-pe^t})^r$\\
+				$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+			\end{enumerate}
+			\item Chebychev's Theorem\\
+			$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$
+			\item Continuous Random Variable
+			\begin{enumerate}
+				\item Basic Properties\\
+				1. $pdf: f_X(x) \ge 0$\\
+				2. $cdf: F_X(x) = \int_{-\infty}^{\infty} f_X(x)dx$\\
+				3. $\int_{-\infty}^{\infty}f_X(x)dx = 1$\\
+				4. $f_X(x) = \frac{d}{dx}F_X(x)$
+				\item Mean, Medium and Variance\\
+				mean: $\mu = E(x) = \int_{-\infty}^{\infty}xf_X(x)dx$\\
+				medium m: solve function $\int_{-\infty}^{m} f_X(x)dx = \frac{1}{2}$\\
+				Variance: \\
+				$VAR(X) = E(X^2) - E^2(X) = \int_{-\infty}^{\infty}[x-E(X)]f_X(x)dx$
+			\end{enumerate}
+		\end{enumerate}
+		\newpage
+	\end{multicols}
+\end{document}
