@@ -30,14 +30,12 @@
 	\begin{multicols}{2}
 		\begin{enumerate}
 			\item Moment Generating Function\\
-			$M_X(t) = E(e^{tx})$\\
-			continuous: $M_X(t) = \int_{-\infty}^{\infty}e^{tx}P_x(x)dx$\\
-			discrete: $M_X(t) = \sum e^{tx}P_x(x)$\\
-			$\frac{dM_x(t)}{dt} = E(\frac{de^{tx}}{dt}) = E(xe^{tx})$
-			$\Rightarrow M^{(n)}_x(t) = E(x^ne^{tx})$\\
+			$$M_X(t) = E(e^{tx})$$
+			continuous: $$M_X(t) = \int_{-\infty}^{\infty}e^{tx}P_x(x)dx$$
+			discrete: $$M_X(t) = \sum e^{tx}P_x(x)$$
+			$$\frac{dM_x(t)}{dt} = E(\frac{de^{tx}}{dt}) = E(xe^{tx})\Rightarrow M^{(n)}_x(t) = E(x^ne^{tx})$$
 			Properties:
 			\begin{enumerate}
-				\item $M_x(t) = (1-p+pe^t)^n$ for binomial(n,p)
 				\item $M_x(t) = E(\sum_{n=0}^{\infty}\frac{x^nt^n}{n!})$ according to Taylor Series\\
 				$M'_x(t) = E(0+x+x^2t + \frac{x^3t^2}{2!} + \dots) = E(\sum_{n=0}^{\infty}\frac{x^{n+1}t^n}{n!})$
 				$\Rightarrow M^{(k)}_x(t) = E(\sum_{n=0}^{\infty}\frac{x^{n+k}t^n}{n!})$
@@ -48,8 +46,8 @@
 				\item $M_{X+Y}(bt) = M_X(t)M_Y(t)$ ($X,Y$ independent)
 			\end{enumerate}
 		
-			\item Gama Function
-			$\Gamma(n) = \int_{0}^{\infty}u^{n-1}e^{-u}du = (n-1)!$\\
+			\item Gama Function\\
+			$$\Gamma(n) = \int_{0}^{\infty}u^{n-1}e^{-u}du = (n-1)!$$
 			Proof:\\
 			1. $\int_{0}^{\infty}e^{-x}dx = -e^{-x}|_0^{\infty} = 1$\\
 			2. $\Gamma(n) = -\int_{0}^{\infty}x^{n-1}de^{-x}\\
@@ -87,50 +85,49 @@
 				$Z = \frac{x-\mu}{\sigma}$, measures the distance of x from expected value in standard units.
 			\end{enumerate}
 		
-			\item Discrete Distributions
+			\item Common Discrete Distributions
 			\begin{enumerate}
 				\item Binomial Distribution\\
 				DEF: n time Bernoulli trials combined. probability of success and fail is (p, 1-p). Probability of success remains the same through the trails. X is the r.v of success times.\\
 				Note as $X \sim B(n,p)$\\
-				$P_X(x) = {n \choose x} p^x (1-p)^{n-x}$\\
-				$M_X(t) = (1-p+pe^t)^n$\\
-				$E(X) = np, VAR(X) = np(1-p)$
+				$$P_X(x) = {n \choose x} p^x (1-p)^{n-x}$$
+				$$M_X(t) = (1-p+pe^t)^n$$
+				$$E(X) = np, \ VAR(X) = np(1-p)$$
 				\item Hyper Geometric Distribution\\
 				DEF: A sample of size n taken from a finite population of size N. The population has a subgroup of size $r \ge n$ that is of interest. x is the number of members of the subgroup taken.\\
 				Note as $X \sim H(N,n,r)$\\
-				$P_X(x) = \frac{{r \choose x}{N-r \choose n-x}}{{N \choose n}}$\\
-				$E(X) = n\frac{r}{N}$\\
-				$VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$\\
+				$$P_X(x) = \frac{{r \choose x}{N-r \choose n-x}}{{N \choose n}}$$
+				$$E(X) = n\frac{r}{N}, \ VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$$
 				When $x \rightarrow \infty$, H(N,n,r) $\rightarrow$ B(n,$\frac{r}{N}$). H samples without replacement while B samples with replacement.
 				\item Poisson Process\\
 				DEF: model the number of random occurance of some phenomenon in specific unit of space or time.\\
-				$P_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}$\\
+				$$P_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}$$
 				$\lambda$: average arrival in given time or space\\
-				$E(X) = \lambda, VAR(X) = \lambda$\\
+				$$E(X) = \lambda, VAR(X) = \lambda$$
 				Poisson simulates Binomial when n is large. usually when $\lambda = np < 10$, we use poisson as an approximation of Binomial.
 				\item Geometric Distribution\\
 				DEF: number of trials to get the first success in a sequence of Bernoulli trials where p is the success probability.
 				\begin{enumerate}
 					\item X is the r.v of number of total trials (x includes the first success)\\
-					$P_X(x) = (1-p)^{x-1}p, x = 1,2,3 \dots$\\
-					$E(X) = 1/p, VAR(X) = \frac{1-p}{p^2}$
+					$$P_X(x) = (1-p)^{x-1}p, x = 1,2,3 \dots$$
+					$$E(X) = 1/p, VAR(X) = \frac{1-p}{p^2}$$
 					\item X is the r.v of number of failed trials (x excludes the first success)\\
-					$P_X(x) = (1-p)^xp, x = 0,1,2,\dots$\\
-					$M_X(t) = \frac{p}{1-e^t(1-p)}$\\
-					$E(X) = \frac{1-p}{p}, VAR(X) = \frac{1-p}{p^2}$
+					$$P_X(x) = (1-p)^xp, x = 0,1,2,\dots$$
+					$$M_X(t) = \frac{p}{1-e^t(1-p)}$$
+					$$E(X) = \frac{1-p}{p}, \ VAR(X) = \frac{1-p}{p^2}$$
 				\end{enumerate}
 				\item Negative Binomial Distribution\\
 					DEF: X is the r.v of number of trials need to observe the $r^{th}$ success in a sequence of Bernoulli trails where p is the success probability.\\
-					$P_X(x) = {x-1 \choose r-1}p^r(1-p)^{x-r}, x = r,r+1,r+2 \dots$\\
-					$M_X(t) = (\frac{p}{1-e^t(1-p)})^r$\\
-					$E(X) = \frac{r}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+					$$P_X(x) = {x-1 \choose r-1}p^r(1-p)^{x-r}, x = r,r+1,r+2 \dots$$
+					$$M_X(t) = (\frac{p}{1-e^t(1-p)})^r$$
+					$$E(X) = \frac{r}{p}, VAR(X) = \frac{r(1-p)}{p^2}$$
 					Alternatively, X is the r.v of failures before the $r^{th}$ success:\\
-					$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$\\
-					$M_X(t) = (\frac{1-p}{1-pe^t})^r$\\
-					$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+					$$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$$
+					$$M_X(t) = (\frac{1-p}{1-pe^t})^r$$
+					$$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$$
 			\end{enumerate}
 			\item Chebychev's Theorem\\
-			$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$
+			$$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$$
 			\item Continuous Random Variable
 			\begin{enumerate}
 				\item Basic Properties\\
@@ -144,26 +141,65 @@
 				Variance: \\
 				$VAR(X) = E(X^2) - E^2(X) = \int_{-\infty}^{\infty}[x-E(X)]f_X(x)dx$
 			\end{enumerate}
-			\item Continuous Distributions
+			\item Common Continuous Distributions
 			\begin{enumerate}
 				\item Uniform(rectangle) Distribution\\
-				$f_X(x) = \frac{1}{b-a}, a \le x \le b$\\
-				$F_X(x) = \frac{x-a}{b-a}, a\le x \le b$\\
-				$E(X) = \frac{a+b}{2}, VAR(X) = \frac{(b-a)^2}{12}$
+				$$f_X(x) = \frac{1}{b-a}, a \le x \le b$$
+				$$F_X(x) = \frac{x-a}{b-a}, a\le x \le b$$
+				$$E(X) = \frac{a+b}{2}, VAR(X) = \frac{(b-a)^2}{12}$$
 				\item Exponential Distribution\\
-				$f_X(x) = \frac{1}{\theta}e^{-\frac{x}{\theta}}, x \ge 0$\\
-				$F_X(x) = 1- e^{-\frac{x}{\theta}}, x \ge 0$\\
-				$M_X(t) = \frac{1}{1-\theta t}$\\
-				$E(X) = \theta, VAR(X) = \theta^2$\\
+				$$f_X(x) = \frac{1}{\theta}e^{-\frac{x}{\theta}}, x \ge 0$$
+				$$F_X(x) = 1- e^{-\frac{x}{\theta}}, x \ge 0$$
+				$$M_X(t) = \frac{1}{1-\theta t}$$
+				$$E(X) = \theta, VAR(X) = \theta^2$$
 				Note as $X \sim exp(\theta)$
 				\item Gamma Distribution\\
-				$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$\\
-				$M_X(t) = \frac{1}{(1-\theta t)^n}$\\
-				$E(X) = n\theta, VAR(X) = n\theta^2$\\
+				$$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$$
+				$$M_X(t) = \frac{1}{(1-\theta t)^n}$$
+				$$E(X) = n\theta, VAR(X) = n\theta^2$$
 				Note as $X \sim \Gamma(n,\theta)$\\
 				Exponential dist. is a special case of Gamma dist where n = 1. Gamma Distribution can be viewed as a sum of Exponential dists.\\
 				$X \sim \Gamma(n,\theta) \Leftrightarrow X = \sum_{i = 1}^{n} X_i, X_i \sim exp(\theta)$
+				\item Normal Distribution\\
+				$$f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \ x \in (-\infty, \infty)$$
+				$$E(x) = \mu, \ VAR(X) = \sigma^2$$
+				Standard normal distribution: $\mu = 0, \sigma = 1$\\
 			\end{enumerate}
+			\item Finding CDF for $Y = g(X)$\\
+			1. $g(x)$ is strictly increasing on the sample space for X\\
+			Let $h(y)$ be the inverse function of $g(x)$. $h(x)$ is also strictly increasing.
+			\begin{align*}
+				F_Y(y) &= P(Y\le y)\\
+				&= P(Y\le y)\\
+				&= P(g(X) \le y)\\
+				&= P[X \le h(y)]\\
+				&= F_X(h(y))
+			\end{align*}
+			Find the density function by differentiating
+			\begin{align*}
+				f_Y(y) &= \frac{d}{dy}F_X(h(y))\\
+				&= \frac{d}{dx}F_X(h(y))\frac{dy}{dx}\\
+				&= \frac{d}{dx}F_X(h(y))h'(y)
+			\end{align*}
+			2. $g(x)$ is strictly decreasing on the sample space for X\\
+			Let $h(y)$ be the inverse function of $g(x)$. $h(x)$ is also strictly decreasing.\\
+			\begin{align*}
+				F_Y(y) &= P(Y\le y)\\
+				&= P(Y\le y)\\
+				&= P(g(X) \le y)\\
+				&= P[X \ge h(y)]\\
+				&= 1 - F_X(h(y))
+			\end{align*}
+			Find the density function by differentiating
+			\begin{align*}
+				f_Y(y) &= \frac{d}{dy}[1-F_X(h(y))]\\
+				&= -\frac{d}{dx}F_X(h(y))\frac{dy}{dx}\\
+				&= -\frac{d}{dx}F_X(h(y))h'(y)
+			\end{align*}
+			IN ALL:\\
+			Density function for $Y = g(X)$\\
+			Let g(x) be strictly decreasing or increasing on the domain consisting of the sample space. Then:
+			$$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$$
 		\end{enumerate}
 	\newpage
 	\end{multicols}
