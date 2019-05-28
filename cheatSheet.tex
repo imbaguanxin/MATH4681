@@ -99,7 +99,7 @@
 				Alternatively, X is the r.v of failures before the $r^{th}$ success:\\
 				$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$\\
 				$M_X(t) = (\frac{1-p}{1-pe^t})^r$\\
-				$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+				$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$
 			\end{enumerate}
 			\item Chebychev's Theorem\\
 			$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$
@@ -119,11 +119,11 @@
 				\item Gamma Distribution\\
 				$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$\\
 				$M_X(t) = \frac{1}{(1-\theta t)^n}$\\
-				$E(X) = n\theta, VAR(X) = n\theta^2$\\
-				Note as $X \sim \Gamma(n,\theta)$\\
-				Exponential dist. is a special case of Gamma dist where n = 1. Gamma Distribution can be viewed as a sum of Exponential dists.\\
-				$X \sim \Gamma(n,\theta) \Leftrightarrow X = \sum_{i = 1}^{n} X_i, X_i \sim exp(\theta)$
+				$E(X) = n\theta, VAR(X) = n\theta^2$
 			\end{enumerate}
+			\item Finding CDF for $Y = g(X)$\\
+			$$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$$
+			where $g(X)$ is strictly increasing or decreasing
 		\end{enumerate}
 		\newpage
 	\end{multicols}
