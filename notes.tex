@@ -161,10 +161,20 @@
 				Exponential dist. is a special case of Gamma dist where n = 1. Gamma Distribution can be viewed as a sum of Exponential dists.\\
 				$X \sim \Gamma(n,\theta) \Leftrightarrow X = \sum_{i = 1}^{n} X_i, X_i \sim exp(\theta)$
 				\item Normal Distribution\\
+				Standard normal distribution: \\
+				X $\sim$ N(0,1), $\mu = 0,\sigma^2 = 1$\\
+				Normal distribution:
 				$$f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \ x \in (-\infty, \infty)$$
+				$$M_X(t) = e^{\mu x + \frac{1}{2}\sigma^2 t^2}$$
 				$$E(x) = \mu, \ VAR(X) = \sigma^2$$
-				Standard normal distribution: $\mu = 0, \sigma = 1$\\
 			\end{enumerate}
+			\item Central Limit Theorem\\
+			Let $\{ X_1, X_2, \dots, X_n \}$ be the independent random variable all of which have the same distribution and mean $\mu$ and standard deviation $\sigma$. If n is large $n \ge 30$, then 
+			$$ S = X_1 + X_2 + \dots + X_n$$
+			will be approximately normal with mean $n\mu$ and variance $n\sigma^2$. $(S\sim N(n\mu, n\sigma^2))$\\
+			$\textbf{OR}$\\
+			$$S' = \frac{X_1 + X_2 + \dots + X_n}{n}$$
+			will be approximately normal with mean $\mu$, variance $\frac{\sigma^2}{n}$.$(S\sim N(\mu, \frac{\sigma^2}{n}))$\\
 			\item Finding CDF for $Y = g(X)$\\
 			1. $g(x)$ is strictly increasing on the sample space for X\\
 			Let $h(y)$ be the inverse function of $g(x)$. $h(x)$ is also strictly increasing.
