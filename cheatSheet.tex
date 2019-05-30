@@ -69,37 +69,31 @@
 				\item Binomial Distribution\\
 				Note as $X \sim B(n,p)$\\
 				$P_X(x) = {n \choose x} p^x (1-p)^{n-x}$\\
-				$M_X(t) = (1-p+pe^t)^n$\\
-				$E(X) = np, VAR(X) = np(1-p)$
+				$M_X(t) = (1-p+pe^t)^n, E(X) = np, VAR(X) = np(1-p)$
 				\item Hyper Geometric Distribution\\
 				Note as $X \sim H(N,n,r)$, N:total size, n:total pick, r:size of special subgroup\\
 				$P_X(x) = \frac{{r \choose x}{N-r \choose n-x}}{{N \choose n}}$\\
-				$E(X) = n\frac{r}{N}$\\
-				$VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$
+				$E(X) = n\frac{r}{N}, VAR(X) = n\frac{r}{N}(1-\frac{r}{N})(\frac{N-n}{N-1})$
 				\item Poisson Process\\
-				$P_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}$\\
+				$P_X(x) = \frac{e^{-\lambda}\lambda^x}{x!}, E(X) = \lambda, VAR(X) = \lambda$\\
 				$\lambda$: average arrival in given time or space\\
-				$E(X) = \lambda, VAR(X) = \lambda$\\
 				When $\lambda = np < 10$, poisson approximates Binomial.
-				\item Geometric Distribution\\
+				\item Geometric Distribution
 				\begin{enumerate}
 					\item X is the r.v of number of total trials (x includes the first success)\\
 					$P_X(x) = (1-p)^{x-1}p, x = 1,2,3 \dots$\\
 					$E(X) = 1/p, VAR(X) = \frac{1-p}{p^2}$
 					\item X is the r.v of number of failed trials (x excludes the first success)\\
 					$P_X(x) = (1-p)^xp, x = 0,1,2,\dots$\\
-					$M_X(t) = \frac{p}{1-e^t(1-p)}$\\
-					$E(X) = \frac{1-p}{p}, VAR(X) = \frac{1-p}{p^2}$
+					$M_X(t) = \frac{p}{1-e^t(1-p)}, E(X) = \frac{1-p}{p}, VAR(X) = \frac{1-p}{p^2}$
 				\end{enumerate}
 				\item Negative Binomial Distribution\\
 				X is the r.v of number of trials need to observe the $r^{th}$ success in a sequence of Bernoulli trails where p is the success probability.\\
 				$P_X(x) = {x-1 \choose r-1}p^r(1-p)^{x-r}, x = r,r+1,r+2 \dots$\\
-				$M_X(t) = (\frac{p}{1-e^t(1-p)})^r$\\
-				$E(X) = \frac{r}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
+				$M_X(t) = (\frac{p}{1-e^t(1-p)})^r, E(X) = \frac{r}{p}, VAR(X) = \frac{r(1-p)}{p^2}$\\
 				Alternatively, X is the r.v of failures before the $r^{th}$ success:\\
 				$P_X(x) = {x+r-1 \choose r-1}p^r(1-p)^x, x = 0,1,2 \dots$\\
-				$M_X(t) = (\frac{1-p}{1-pe^t})^r$\\
-				$E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$
+				$M_X(t) = (\frac{1-p}{1-pe^t})^r, E(X) = \frac{r(1-p)}{p}, VAR(X) = \frac{r(1-p)}{p^2}$
 			\end{enumerate}
 			\item Chebychev's Theorem\\
 			$P(\mu-k\sigma \le x \le \mu+k\sigma) \ge 1-\frac{1}{k^2}$
@@ -107,24 +101,24 @@
 			\item Continuous Distributions
 			\begin{enumerate}
 				\item Uniform(rectangle) Distribution\\
-				$f_X(x) = \frac{1}{b-a}, a \le x \le b$\\
-				$F_X(x) = \frac{x-a}{b-a}, a\le x \le b$\\
+				$f_X(x) = \frac{1}{b-a},  \  (a \le x \le b); F_X(x) = \frac{x-a}{b-a}, a\le x \le b$\\
 				$E(X) = \frac{a+b}{2}, VAR(X) = \frac{(b-a)^2}{12}$
 				\item Exponential Distribution\\
-				$f_X(x) = \frac{1}{\theta}e^{-\frac{x}{\theta}}, x \ge 0$\\
-				$F_X(x) = 1- e^{-\frac{x}{\theta}}, x \ge 0$\\
-				$M_X(t) = \frac{1}{1-\theta t}$\\
-				$E(X) = \theta, VAR(X) = \theta^2$\\
+				$f_X(x) = \frac{1}{\theta}e^{-\frac{x}{\theta}}, (x \ge 0); F_X(x) = 1- e^{-\frac{x}{\theta}}, x \ge 0$\\
+				$M_X(t) = \frac{1}{1-\theta t}, E(X) = \theta, VAR(X) = \theta^2$\\
 				Note as $X \sim exp(\theta)$
 				\item Gamma Distribution\\
 				$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$\\
-				$M_X(t) = \frac{1}{(1-\theta t)^n}$\\
-				$E(X) = n\theta, VAR(X) = n\theta^2$
+				$M_X(t) = \frac{1}{(1-\theta t)^n}, E(X) = n\theta, VAR(X) = n\theta^2$
 			\end{enumerate}
+			
+			\item Central Limit Theorem\\
+			Let $\{ X_1, X_2, \dots, X_n \}$ be the independent random variable all of which have the same distribution and mean $\mu$ and standard deviation $\sigma$. If n is large $n \ge 30$, then 
+			$ S = X_1 + X_2 + \dots + X_n$
+			will be approximately normal with mean $n\mu$ and variance $n\sigma^2$. $(S\sim N(n\mu, n\sigma^2))$\\
+			$\textbf{OR} \ S' = \frac{X_1 + X_2 + \dots + X_n}{n}$ will be approximately normal with mean $\mu$, variance $\frac{\sigma^2}{n}$.$(S\sim N(\mu, \frac{\sigma^2}{n}))$
 			\item Finding CDF for $Y = g(X)$\\
-			$$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$$
-			where $g(X)$ is strictly increasing or decreasing
-		\end{enumerate}
+			$g(X)$ is strictly increasing or decreasing, $f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$		\end{enumerate}
 		\newpage
 	\end{multicols}
 \end{document}
