@@ -172,6 +172,10 @@
 				$$f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \ x \in (-\infty, \infty)$$
 				$$M_X(t) = e^{\mu x + \frac{1}{2}\sigma^2 t^2}$$
 				$$E(x) = \mu, \ VAR(X) = \sigma^2$$
+				\item Log-normal Distribution:\\
+				$Y = e^X, X \sim N(\mu, \sigma^2)$
+				$$f_Y(y) = \frac{1}{\sigma y \sqrt{2 \pi}}e^{-\frac{1}{2}(\frac{lny - \mu}{\sigma})^2}, y \ge 0$$
+				$$E(Y) = e^{\mu+\frac{\sigma^2}{2}}, VAR(Y) = e^{2\mu + \sigma^2}(e^{\sigma^2} - 1)$$
 			\end{enumerate}
 			\item Central Limit Theorem\\
 			Let $\{ X_1, X_2, \dots, X_n \}$ be the independent random variable all of which have the same distribution and mean $\mu$ and standard deviation $\sigma$. If n is large $n \ge 30$, then 
