@@ -111,15 +111,19 @@
 				$f_X(x)= \frac{1}{\Gamma(n)\theta^n}x^{n-1}e^{-\frac{x}{\theta}}, x \ge 0$\\
 				$M_X(t) = \frac{1}{(1-\theta t)^n}, E(X) = n\theta, VAR(X) = n\theta^2$\\
 				In terms of $\alpha, \beta:$ $\alpha = n, \beta = \frac{1}{\theta}$
+				\item Normal Distribution\\
+				$f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, E(X) = \mu, VAR(X) = \sigma^2$\\
+				$M_X(t) = e^{\mu x + \frac{1}{2}\sigma^2 t^2}$
 			\end{enumerate}
 			
 			\item Central Limit Theorem\\
-			Let $\{ X_1, X_2, \dots, X_n \}$ be the independent random variable all of which have the same distribution and mean $\mu$ and standard deviation $\sigma$. If n is large $n \ge 30$, then 
-			$ S = X_1 + X_2 + \dots + X_n$
-			will be approximately normal with mean $n\mu$ and variance $n\sigma^2$. $(S\sim N(n\mu, n\sigma^2))$\\
-			$\textbf{OR} \ S' = \frac{X_1 + X_2 + \dots + X_n}{n}$ will be approximately normal with mean $\mu$, variance $\frac{\sigma^2}{n}$.$(S\sim N(\mu, \frac{\sigma^2}{n}))$
+			Let $\{ X_1, X_2, \dots, X_n \}$ be the indep. r.v. with same distribution and mean $\mu$ and std. deviation $\sigma$. If n is large $n \ge 30$, 
+			$ S = X_1 + X_2 + \dots + X_n \Rightarrow S\sim N(n\mu, n\sigma^2)$\\
+			$\textbf{OR} \ S' = \frac{X_1 + X_2 + \dots + X_n}{n} \Rightarrow S\sim N(\mu, \frac{\sigma^2}{n})$
 			\item Finding CDF for $Y = g(X)$\\
-			$g(X)$ is strictly increasing or decreasing, $f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$		\end{enumerate}
+			If $g(X)$ is strictly increasing or decreasing\\
+			$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$
+		\end{enumerate}
 		\newpage
 	\end{multicols}
 \end{document}
