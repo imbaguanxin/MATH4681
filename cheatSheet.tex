@@ -47,7 +47,7 @@
 			\item Basic probability property
 			\begin{enumerate}
 				\item Conditional Probability and Bayles Theorem\\
-				1. $P(A|B) = \frac{P(A\cup B)}{P(B)}$\\
+				1. $P(A|B) = \frac{P(A\cap B)}{P(B)}$\\
 				2. $P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|A')P(A')} $
 				\item Expectation\\
 				1. $E(X) = \sum xP_X(x)$ or $\int_{-\infty}^{\infty}xf_X(x)$\\
@@ -114,6 +114,10 @@
 				\item Normal Distribution\\
 				$f_X(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, E(X) = \mu, VAR(X) = \sigma^2$\\
 				$M_X(t) = e^{\mu x + \frac{1}{2}\sigma^2 t^2}$
+				\item Log-normal Distribution:\\
+				$Y = e^X, X \sim N(\mu, \sigma^2)$, 
+				$f_Y(y) = \frac{1}{\sigma y \sqrt{2 \pi}}e^{-\frac{1}{2}(\frac{lny - \mu}{\sigma})^2}, y \ge 0$\\
+				$E(Y) = e^{\mu+\frac{\sigma^2}{2}}, VAR(Y) = e^{2\mu + \sigma^2}(e^{\sigma^2} - 1)$
 			\end{enumerate}
 			
 			\item Central Limit Theorem\\
@@ -122,7 +126,7 @@
 			$\textbf{OR} \ S' = \frac{X_1 + X_2 + \dots + X_n}{n} \Rightarrow S\sim N(\mu, \frac{\sigma^2}{n})$
 			\item Finding CDF for $Y = g(X)$\\
 			If $g(X)$ is strictly increasing or decreasing\\
-			$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$
+			$f_Y(y) = f_X(h(y)) \cdot |h'(y)|, h(y) = g^{-1}(x)$
 		\end{enumerate}
 		\newpage
 	\end{multicols}
