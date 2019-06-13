@@ -196,6 +196,13 @@
 				\item Beta Distribution
 				$$f_X(x) = \frac{\Gamma(a + b)}{\Gamma(a)\Gamma(b)}x^{a-1}(1-x)^{b-1}, x \in (0,1), a>0, b>0$$
 				$$E(X) = \frac{a}{a+b}, VAR(X) = \frac{ab}{(a+b)^2(a+b+1)}$$
+				\item Chi-Square $\chi^2$ Distribution
+				$$f_X(x) = \frac{1}{2^{\frac{k}{2}}\Gamma(\frac{k}{2})}x^{\frac{k}{2}-1}e^{-\frac{x}{2}}, x > 0$$
+				$$E(X) = k, VAR(X) = 2k$$
+				$$M_X(t) = \frac{1}{(1-2t)^{\frac{k}{2}}}$$
+				This is a special case of Gamma Dist. of $\alpha = \frac{k}{2}, \ \beta = 2$\\
+				$f_{Z^2}(z) = \frac{1}{\Gamma(\frac{1}{2})2^{\frac{1}{2}}}e^{\frac{y}{2}}y^{\frac{1}{2}-1}$(gamma dist of $\alpha = \frac{1}{2}, \beta = 2$)
+				$\chi^2 = \sum_{i = 1}^{k}Z_i^2$(sum of k squared standard normal)
 			\end{enumerate}
 			\item Central Limit Theorem\\
 			Let $\{ X_1, X_2, \dots, X_n \}$ be the independent random variable all of which have the same distribution and mean $\mu$ and standard deviation $\sigma$. If n is large $n \ge 30$, then 
@@ -241,16 +248,16 @@
 			$$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$$
 			\item Multivariable Distributions
 			\begin{enumerate}
-				\item Marginal Distribution\\
+				\item Marginal Distribution
 				$$p_X(x)=\sum_{y}p(x,y), \ p_Y(y)=\sum_{x}p(x,y) $$
 				$$f_X(x) = \int_{-\infty}^{\infty}p(x,y)dy, \ f_Y(y) = \int_{-\infty}^{\infty}p(x,y)dx$$
-				\item Conditional Distribution\\
+				\item Conditional Distribution
 				$$P(X = x|Y = y) = \frac{p(x,y)}{p_Y(y)}, \ P(Y = y|X = x) = \frac{p(x,y)}{p_X(x)}$$
 				$$f(x|Y=y)=\frac{f(x,y)}{f_Y(y)}, \ f(y|X=x)=\frac{f(x,y)}{f_X(x)}$$
-				\item Conditional Expected Value\\
+				\item Conditional Expected Value
 				$$E(y|X=x) = \sum_{y}y\cdot p(y|x), \ E(x|Y=y) = \sum_{x}x\cdot p(x|y)$$
 				$$E(y|X=x) = \int_{-\infty}^{\infty}y\cdot f(y|x)dy, \ E(x|Y=y) = \int_{-\infty}^{\infty}x\cdot f(x|y)dx$$
-				\item independent
+				\item Independence
 				$$p(x,y) = p_X(x) \cdot p_Y(y)$$
 				$$f(x|y) = f_X(x), \ f(y|x) = f_Y(y)$$
 			\end{enumerate}
