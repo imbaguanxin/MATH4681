@@ -239,6 +239,21 @@
 			Density function for $Y = g(X)$\\
 			Let g(x) be strictly decreasing or increasing on the domain consisting of the sample space. Then:
 			$$f_Y(y) = \frac{d}{dx}F_X(h(y)) \cdot |h'(y)|$$
+			\item Multivariable Distributions
+			\begin{enumerate}
+				\item Marginal Distribution\\
+				$$p_X(x)=\sum_{y}p(x,y), \ p_Y(y)=\sum_{x}p(x,y) $$
+				$$f_X(x) = \int_{-\infty}^{\infty}p(x,y)dy, \ f_Y(y) = \int_{-\infty}^{\infty}p(x,y)dx$$
+				\item Conditional Distribution\\
+				$$P(X = x|Y = y) = \frac{p(x,y)}{p_Y(y)}, \ P(Y = y|X = x) = \frac{p(x,y)}{p_X(x)}$$
+				$$f(x|Y=y)=\frac{f(x,y)}{f_Y(y)}, \ f(y|X=x)=\frac{f(x,y)}{f_X(x)}$$
+				\item Conditional Expected Value\\
+				$$E(y|X=x) = \sum_{y}y\cdot p(y|x), \ E(x|Y=y) = \sum_{x}x\cdot p(x|y)$$
+				$$E(y|X=x) = \int_{-\infty}^{\infty}y\cdot f(y|x)dy, \ E(x|Y=y) = \int_{-\infty}^{\infty}x\cdot f(x|y)dx$$
+				\item independent
+				$$p(x,y) = p_X(x) \cdot p_Y(y)$$
+				$$f(x|y) = f_X(x), \ f(y|x) = f_Y(y)$$
+			\end{enumerate}
 		\end{enumerate}
 	\newpage
 	\end{multicols}
