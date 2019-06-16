@@ -260,6 +260,24 @@
 				\item Independence
 				$$p(x,y) = p_X(x) \cdot p_Y(y)$$
 				$$f(x|y) = f_X(x), \ f(y|x) = f_Y(y)$$
+				$$E(X+Y) = E(X)+E(Y)$$
+				$$COV(X,Y) = 0$$
+				$$VAR(X \pm Y) = VAR(X) + VAR(Y)$$
+				\item Covariance
+				$$COV(x,y) = E[(X-\mu_X)(Y-\mu_Y)] = E(XY) - E(X)E(Y)$$
+				Properties:
+				\begin{enumerate}
+					\item $COV(X,Y) = COV(Y,X)$
+					\item $COV(X,X) = VAR(X)$
+					\item $COV(X,K) = 0, K$ is constant
+					\item $COV(aX,bY) = ab\cdot COV(X,Y)$
+					\item $COV(X,Y+Z) = COV(X,Y) + COV(X,Z)$
+					\item If $X, Y$ are independent, $COV(X,Y) = 0$
+				\end{enumerate}
+				\item Correlation Coefficient $\rho$\\
+				$$\rho = \rho_{X,Y}= \frac{COV(X,Y)}{\sigma_X \cdot \sigma_Y}, \in [-1,1]$$
+				$|\rho_{X,Y}|$ close to 1 : more related\\
+				$\rho > 0$ positively related, $\rho < 0$ negatively related
 			\end{enumerate}
 		\end{enumerate}
 	\newpage
