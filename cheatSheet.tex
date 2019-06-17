@@ -158,6 +158,30 @@
 				\item Independence\\
 				$p(x,y) = p_X(x) \cdot p_Y(y)$\\
 				$f(x|y) = f_X(x), \ f(y|x) = f_Y(y)$
+				\item Covariance\\
+				$COV(x,y) = E[(X-\mu_X)(Y-\mu_Y)] = E(XY) - E(X)E(Y)$\\
+				Properties:
+				\begin{enumerate}
+					\item $COV(X,Y) = COV(Y,X)$
+					\item $COV(X,X) = VAR(X)$
+					\item $COV(X,K) = 0, K$ is constant
+					\item $COV(aX,bY) = ab\cdot COV(X,Y)$
+					\item $COV(X,Y+Z) = COV(X,Y) + COV(X,Z)$
+					\item If $X, Y$ are independent, $COV(X,Y) = 0$
+				\end{enumerate}
+				\item Correlation Coefficient $\rho$\\
+				$$\rho = \rho_{X,Y}= \frac{COV(X,Y)}{\sigma_X \cdot \sigma_Y}, \in [-1,1]$$
+				$|\rho_{X,Y}|$ close to 1 : more related\\
+				$\rho > 0$ positively related, $\rho < 0$ negatively related
+				\item Moment Generating Function of Joint Distribution
+				$M_{X,Y}(t_1, t_2) = E(e^{t_1X + t_2Y})$\\
+				$E(X)=\frac{d}{dt_1}M_{X,Y}(t1,t2)|_{t_1=t_2=0}, E(Y) = \frac{d}{dt_2}M_{X,Y}(t1,t2)|_{t_1=t_2=0}$\\
+				$E(X^mY^n) = \frac{\partial^{m+n}}{\partial^mt_1\partial^nt_2}M_{X,Y}(t_1, t_2)|_{t_1=t_2=0}$\\
+				\item Multinomial Distribution\\
+				Counting Partitions:\\
+				${n \choose {n_1, n_2, \dots , n_k}} =  \frac{n!}{n_1!n_2! \dots n_k!}$\\
+				Suppose that a random experiment has $K$ mutually exclusive outcomes $E_1, E_2, \dots E_k$, with $P(E_i) = p_i , i \in [1,k]$. Suppose you repeat this experiment in $n$ independent trails. Then:\\
+				$P(X_1 = E_1, \dots , X_k = E_k) = {n \choose {n_1, n_2, \dots , n_k}}p_1^{n_1}p_2^{n_2} \dots p_k^{n_k}$
 			\end{enumerate}
 		\end{enumerate}
 		\newpage
