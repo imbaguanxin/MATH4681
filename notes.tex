@@ -278,6 +278,17 @@
 				$$\rho = \rho_{X,Y}= \frac{COV(X,Y)}{\sigma_X \cdot \sigma_Y}, \in [-1,1]$$
 				$|\rho_{X,Y}|$ close to 1 : more related\\
 				$\rho > 0$ positively related, $\rho < 0$ negatively related
+				\item Moment Generating Function of Joint Distribution
+				$$M_{X,Y}(t_1, t_2) = E(e^{t_1X + t_2Y})$$
+				$$E(X)=\frac{d}{dt_1}M_{X,Y}(t1,t2)|_{t_1=t_2=0}$$
+				$$E(Y) = \frac{d}{dt_2}M_{X,Y}(t1,t2)|_{t_1=t_2=0}$$
+				$$E(X^mY^n) = \frac{\partial^{m+n}}{\partial^mt_1\partial^nt_2}M_{X,Y}(t_1, t_2)|_{t_1=t_2=0}$$
+				\item Multinomial Distribution\\
+				Counting Partitions:\\
+				The number of Partitions of $n$ objects into $k$ distinct groups of size $n_1, n_2 \dots n_k$ is given by:
+				$${n \choose {n_1, n_2, \dots , n_k}} =  \frac{n!}{n_1!n_2! \dots n_k!}$$
+				Suppose that a random experiment has $K$ mutually exclusive outcomes $E_1, E_2, \dots E_k$, with $P(E_i) = p_i , i \in [1,k]$. Suppose you repeat this experiment in $n$ independent trails. Then:\\
+				$P(X_1 = E_1, X_2 = E_2 \dots , X_k = E_k) = {n \choose {n_1, n_2, \dots , n_k}}p_1^{n_1}p_2^{n_2} \dots p_k^{n_k}$
 			\end{enumerate}
 		\end{enumerate}
 	\newpage
