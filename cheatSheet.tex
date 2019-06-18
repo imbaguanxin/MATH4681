@@ -133,10 +133,15 @@
 				$E(X) = k, VAR(X) = 2k, M_X(t) = \frac{1}{(1-2t)^{\frac{k}{2}}}$\\
 				Special case of Gamma Dist. of $\alpha = \frac{k}{2}, \ \beta = 2$\\
 				$\chi^2 = \sum_{i = 1}^{k}Z_i^2$(sum of k squared standard normal)\\
-				Theorem:\\
-				If $X_1, X_2 \dots, X_k$ is a random $\textbf{sample}$ from $N(\mu, \sigma^2)$\\
-				1. $Z = \sum_{i = 1}^{k}(\frac{x_i-\mu}{\sigma})^2 \sim \chi^2(k)$ (mean)\\
-				2. $Z = \sum_{i = 1}^{k}(\frac{x_i-\bar x}{\sigma})^2 \sim \chi^2(k-1)$ (sample mean)\\
+				$\textbf{THEOREM}$:
+				\begin{enumerate}
+					\item $\chi^2(a) + \chi^2(b) = \chi^2(a+b)$
+					\item If $X_1, X_2 \dots, X_k$ is a random $\textbf{sample}$ from $N(\mu, \sigma^2)$\\
+					$Z = \sum_{i = 1}^{k}(\frac{x_i-\mu}{\sigma})^2 \sim \chi^2(k)$ (mean)\\
+					$Z = \sum_{i = 1}^{k}(\frac{x_i-\bar x}{\sigma})^2 \sim \chi^2(k-1)$ (sample mean)
+					\item When $n \ge 30$, Normal approximates Chi Square\\
+					$\chi^2(k) \sim N(k,2k)$
+				\end{enumerate}
 			\end{enumerate}
 			
 			\item Central Limit Theorem\\
@@ -172,6 +177,7 @@
 					\item $COV(aX,bY) = ab\cdot COV(X,Y)$
 					\item $COV(X,Y+Z) = COV(X,Y) + COV(X,Z)$
 					\item If $X, Y$ are independent, $COV(X,Y) = 0$
+					\item $VAR(X\pm Y) = VAR(X) + VAR(Y) \pm 2COV(x,y)$
 				\end{enumerate}
 				\item Correlation Coefficient $\rho$\\
 				$$\rho = \rho_{X,Y}= \frac{COV(X,Y)}{\sigma_X \cdot \sigma_Y}, \in [-1,1]$$
