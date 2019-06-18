@@ -203,6 +203,10 @@
 				This is a special case of Gamma Dist. of $\alpha = \frac{k}{2}, \ \beta = 2$\\
 				$f_{Z^2}(z) = \frac{1}{\Gamma(\frac{1}{2})2^{\frac{1}{2}}}e^{\frac{y}{2}}y^{\frac{1}{2}-1}$(gamma dist of $\alpha = \frac{1}{2}, \beta = 2$)
 				$\chi^2 = \sum_{i = 1}^{k}Z_i^2$(sum of k squared standard normal)
+				Theorem:\\
+				If $X_1, X_2 \dots, X_k$ is a random $\textbf{sample}$ from $N(\mu, \sigma^2)$\\
+				1. $Z = \sum_{i = 1}^{k}(\frac{x_i-\mu}{\sigma})^2 \sim \chi^2(k)$ (mean)\\
+				2. $Z = \sum_{i = 1}^{k}(\frac{x_i-\bar x}{\sigma})^2 \sim \chi^2(k-1)$ (sample mean)\\
 			\end{enumerate}
 			\item Central Limit Theorem\\
 			Let $\{ X_1, X_2, \dots, X_n \}$ be the independent random variable all of which have the same distribution and mean $\mu$ and standard deviation $\sigma$. If n is large $n \ge 30$, then 
@@ -288,7 +292,7 @@
 				The number of Partitions of $n$ objects into $k$ distinct groups of size $n_1, n_2 \dots n_k$ is given by:
 				$${n \choose {n_1, n_2, \dots , n_k}} =  \frac{n!}{n_1!n_2! \dots n_k!}$$
 				Suppose that a random experiment has $K$ mutually exclusive outcomes $E_1, E_2, \dots E_k$, with $P(E_i) = p_i , i \in [1,k]$. Suppose you repeat this experiment in $n$ independent trails. Then:\\
-				$P(X_1 = E_1, X_2 = E_2 \dots , X_k = E_k) = {n \choose {n_1, n_2, \dots , n_k}}p_1^{n_1}p_2^{n_2} \dots p_k^{n_k}$
+				$P(X_1 = E_1, \dots , X_k = E_k) = {n \choose {n_1, n_2, \dots , n_k}}p_1^{n_1}p_2^{n_2} \dots p_k^{n_k}$
 			\end{enumerate}
 		\end{enumerate}
 	\newpage
